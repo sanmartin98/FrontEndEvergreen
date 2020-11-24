@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Proyectos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body class="container">
+    <h1 class="form-group text-center">Proyectos</h1>
+    <div class="container jumbotron" style="width: 90%;">
+        <div class="list-group">
+            {% if proyectos %}
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nombre proyecto</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Modulo</th>
+                      <th scope="col">Encargado</th>
+                      <th scope="col">Tipo</th>
+                      <th scope="col">Descripción dataset</th>
+                      <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+            {% for item in proyectos %}
+                  <tr>
+                    <th scope="row">{{item.id_proyecto}}</th>
+                    <td>{{item.nombre_proyecto}}</td>
+                    <td>{{item.desc_proyecto}}</td>
+                    <td>{{item.modulo_encargado}}</td>
+                    <td>{{item.persona_encargada}}</td>
+                    <td>{{item.tipo_proyecto}}</td>
+                    <td>{{item.desc_dataset}}</td>
+                    <td>{{item.estado}}</td>
+                  </tr>
+            {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <h3 class="form-group text-center">No se ha creado ningun proyecto</h3>
+            {% endif %}
+        </div>
+    
+    </div>
+</body>
+</html>
