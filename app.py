@@ -12,7 +12,7 @@ modulos = ['Suministro','Producción','Distribución','Planeación','Finanzas','
 def guardarProyecto():
     proyectos = dict(request.values)
     proyectos['estado'] = 'En desarrollo'
-    requests.post('http://127.0.0.1:5000/proyectosAnalitica',json=proyectos)
+    requests.post('http://34.73.204.3/proyectosAnalitica',json=proyectos)
     return(listarProyectos())
 
 
@@ -23,7 +23,7 @@ def crearProyecto():
 
 @app.route('/listarProyectos',methods=['Get'])
 def listarProyectos():
-    proyectos = requests.get('http://127.0.0.1:5000/proyectosAnalitica').json()
+    proyectos = requests.get('http://34.73.204.3/proyectosAnalitica').json()
     return render_template('listarProyectoAanalitica.html',proyectos=proyectos)
 
 if __name__ == '__main__':
