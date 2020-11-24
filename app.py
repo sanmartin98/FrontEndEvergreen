@@ -25,3 +25,6 @@ def crearProyecto():
 def listarProyectos():
     proyectos = requests.get('http://127.0.0.1:5000/proyectosAnalitica').json()
     return render_template('listarProyectoAanalitica.html',proyectos=proyectos)
+
+if __name__ == '__main__':
+ app.run(port = 80, debug=True,host='0.0.0.0')
